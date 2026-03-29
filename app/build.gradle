@@ -25,6 +25,7 @@ android {
     }
 
     buildFeatures {
+        // We'll use ViewBinding instead of DataBinding to avoid the mutation bug
         viewBinding true
     }
 }
