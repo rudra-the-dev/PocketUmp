@@ -14,6 +14,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build Debug APK
-        # We add --no-daemon to prevent the "Daemon" crash on virtual servers
-        run: gradle assembleDebug --no-daemon
+      - name: Grant Execute Permission
+        run: chmod +x gradlew
+
+      - name: Build with Gradle Wrapper
+        run: ./gradlew assembleDebug
