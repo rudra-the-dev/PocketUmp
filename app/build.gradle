@@ -1,31 +1,16 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        // This is the engine that allows the server to understand Android code
-        classpath "com.android.tools.build:gradle:8.1.0"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10"
-    }
-}
-
-apply plugin: 'com.android.application'
-apply plugin: 'org.jetbrains.kotlin.android'
-
-repositories {
-    google()
-    mavenCentral()
+plugins {
+    id 'com.android.application' version '8.2.0'
+    id 'org.jetbrains.kotlin.android' version '1.9.0'
 }
 
 android {
     namespace 'com.gully.scanner'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.gully.scanner"
-        minSdk 24 // Required for ARCore
-        targetSdk 33
+        minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -53,12 +38,12 @@ dependencies {
     // ARCore for 3D Scanning
     implementation 'com.google.ar:core:1.37.0'
     
-    // GSON for exporting the JSON to your expert
+    // GSON for exporting the JSON
     implementation 'com.google.code.gson:gson:2.10.1'
     
-    // Android UI and Core tools
-    implementation 'androidx.core:core-ktx:1.10.1'
+    // Standard Android Libraries
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
