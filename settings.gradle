@@ -6,7 +6,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    // This is the "Lock" that stops the mutation error
+    // This CRITICAL line stops the "Mutation" error by locking the dependencies
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
