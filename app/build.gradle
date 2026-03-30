@@ -15,6 +15,11 @@ android {
         versionName "1.0"
     }
 
+    buildFeatures {
+        // Switching to viewBinding is safer in Gradle 9
+        viewBinding true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -22,11 +27,6 @@ android {
 
     kotlinOptions {
         jvmTarget = '17'
-    }
-
-    buildFeatures {
-        // We'll use ViewBinding instead of DataBinding to avoid the mutation bug
-        viewBinding true
     }
 }
 
