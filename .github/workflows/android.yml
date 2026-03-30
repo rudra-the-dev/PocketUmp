@@ -14,12 +14,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # This magic step creates the missing .jar file so gradlew can work
-      - name: Generate Gradle Wrapper
-        run: gradle wrapper
-
       - name: Grant Execute Permission
         run: chmod +x gradlew
 
-      - name: Build with Gradle Wrapper
-        run: ./gradlew assembleDebug
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
