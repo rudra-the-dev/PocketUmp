@@ -16,7 +16,8 @@ android {
     }
 
     buildFeatures {
-        // Switching to viewBinding is safer in Gradle 9
+        
+        dataBinding false
         viewBinding true
     }
 
